@@ -1,8 +1,8 @@
-// 某雪自动签到（修改这里，这里填是什么签到）
-// 20240512 （修改这里）
+// 科技自动签到（修改这里，这里填是什么签到）
+// 20250307 （修改这里）
 
-var sheetNameSubConfig = "mouxue"; // 分配置表名称（修改这里，这里填表的名称，需要和UPDATE文件中的一致，自定义的）
-var pushHeader = "【某雪论坛】";    //（修改这里，这里给自己看的，随便填）
+var sheetNameSubConfig = "keji"; // 分配置表名称（修改这里，这里填表的名称，需要和UPDATE文件中的一致，自定义的）
+var pushHeader = "【科技论坛】";    //（修改这里，这里给自己看的，随便填）
 var sheetNameConfig = "CONFIG"; // 总配置表
 var sheetNamePush = "PUSH"; // 推送表名称
 var sheetNameEmail = "EMAIL"; // 邮箱表
@@ -379,13 +379,13 @@ function execHandle(cookie, pos) {
 
   // =================修改这块区域，区域开始=================
 
-  url1 = "https://bbs.mouxue.com/user-signin.htm"; // 签到url（修改这里，这里填抓包获取到的地址）
+  url1 = "https://www.kejiwanjia.net/wp-json/b2/v1/getUserMission"; // 签到url（修改这里，这里填抓包获取到的地址）
 
   // （修改这里，这里填抓包获取header，全部抄进来就可以了，按照如下用引号包裹的格式，其中小写的cookie是从表格中读取到的值。）
-  headers= {
-    "Cookie": cookie,
-    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36 Edg/91.0.864.70",
-  }
+  headers= {'Sec-Fetch-Dest' : `empty`,'Connection' : `keep-alive`,'Accept-Encoding' : `gzip, deflate, br`,'Content-Type' : `application/x-www-form-urlencoded`,'Sec-Fetch-Site' : `same-origin`,
+'Origin' : `https://www.kejiwanjia.net`,'User-Agent' : `Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 (KHTML, like Gecko) Teak/6.1 Version/18.2.1 Safari/605.1.15`,'Authorization' : `Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvd3d3Lmtlaml3YW5qaWEubmV0IiwiaWF0IjoxNzQxMzI4ODQ5LCJuYmYiOjE3NDEzMjg4NDksImV4cCI6MTc0MjUzODQ0OSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMTMyNzMifX19.jSSDsDMBydB3nMZk250H4gsrB19EyJzmCBwR8gqlvgU`,'Sec-Fetch-Mode' : `cors`,
+'Cookie' : `_ga=GA1.1.2055692378.1741328777; _ga_82DHH1SNHE=GS1.1.1741328777.1.1.1741328913.0.0.0; cf_clearance=pPthr1sG7gDRbi_cev2Tg_zD9_t5keBp6oNfowhgboI-1741328898-1.2.1.1-W.cMfKGXH3s4prg.Zcup.Z_oeDxhGg9gzCF_00l2fOuLDn7jgU8tKbmZC2YW8KxMxDR6f5_YKoVptVvcVirq1psfN690OyKy_t7mRQLnoSSYIFgPQo2PdarZHQF4ggL3f9_IRznC0Avhij4kilaL8ChlzzLf3yFJuKCLTO2KixE9ESdTWPU4WQcmDuloM04HiPvAiqAg04TamMRiBTBVc6NeNxe1BWpOEa9uF0imG.aQllKPUixp_IpdWYkKsg2uM_oCNNzSCWQtll5NDxiiioUeJiSmwAvFOxL2FpY6VG4y6Aue_HVjtbOu5lIK1KgONQf..PJvs4boHaYIpQU27FLkhwiWx4nN0KyzLGwgKznc0pEG5npOTOCX5pQYNTvUYmN7SIZ_izc4eyaQU4GmVErGN3Tvbt97LPkD0rtUJTg; b2_token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwczpcL1wvd3d3Lmtlaml3YW5qaWEubmV0IiwiaWF0IjoxNzQxMzI4ODQ5LCJuYmYiOjE3NDEzMjg4NDksImV4cCI6MTc0MjUzODQ0OSwiZGF0YSI6eyJ1c2VyIjp7ImlkIjoiMTMyNzMifX19.jSSDsDMBydB3nMZk250H4gsrB19EyJzmCBwR8gqlvgU; wordpress_logged_in_58774796c4a21b69e1832b5a4823ffe4=user13273_150%7C1741890449%7CZXhSAk2HHOzQhjJ5pDoBF1qLbPAqZeQzryVNOXkOsJ9%7Cbf1488b566024a75371062c2653220545f4cfb3cedb0c0e6b90c86bc00004c34; PHPSESSID=l1m8nhmmdicil3i6ka2fv8opj7; gg_info=1741328780`,'Host' : `www.kejiwanjia.net`,'Referer' : `https://www.kejiwanjia.net/`,'Accept-Language' : `zh-CN,zh-Hans;q=0.9`,'Accept' : `application/json, text/plain, */*`
+};
 
   // （修改这里，这里填抓包获取data，全部抄进来就可以了，按照如下用引号包裹的格式。POST请求才需要这个，GET请求就不用它了）
   data = {
